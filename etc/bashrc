@@ -22,6 +22,7 @@ if [ "$OS" = "linux" ] ; then
   # ls colors, see: http://www.linux-sxs.org/housekeeping/lscolors.html
   export LS_COLORS='di=1:fi=0:ln=31:pi=5:so=5:bd=5:cd=5:or=31:mi=0:ex=35:*.rb=90'  #LS_COLORS is not supported by the default ls command in OS-X
 else
+  export LSCOLORS='gxfxcxdxbxegedabagacad' # exfxcxdxbxegedabagacad is default
   alias ls='ls -G'  # OS-X SPECIFIC - the -G command in OS-X is for colors, in Linux it's no groups
 fi
 
@@ -104,9 +105,9 @@ if [ $IS_INTERACTIVE = 'true' ] ; then # Interactive shell only
   prompt_func() {
       previous_return_value=$?;
       if [ $IS_REMOTE = 'true' ] ; then
-        prompt="\[\033]0;${USER} ${PWD}\007\]\[${COLOR_PURPLE}\]\w\[${COLOR_GRAY}\]$(__git_ps1)\[${COLOR_NC}\] "
+        prompt="\[\033]0;${USER} ${PWD}\007\]\[${COLOR_PURPLE}\]\w\[${COLOR_LIGHT_PURPLE}\]$(__git_ps1)\[${COLOR_NC}\] "
       else
-        prompt="\[\033]0;${USER} ${PWD}\007\]\[${COLOR_GREEN}\]\w\[${COLOR_GRAY}\]$(__git_ps1)\[${COLOR_NC}\] "
+        prompt="\[\033]0;${USER} ${PWD}\007\]\[${COLOR_GREEN}\]\w\[${COLOR_LIGHT_PURPLE}\]$(__git_ps1)\[${COLOR_NC}\] "
       fi
       #prompt="\033]0;${PWD}\007\[${COLOR_GREEN}\]\w\[${COLOR_GRAY}\]$(__git_ps1)\[${COLOR_NC}\] "
       #prompt="\[${COLOR_GREEN}\]\w\[${COLOR_GRAY}\]$(__git_ps1)\[${COLOR_YELLOW}\]$(git_dirty_flag)\[${COLOR_NC}\] "
