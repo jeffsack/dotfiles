@@ -273,7 +273,7 @@ killhard() {
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" 
 
 # Fixes problems with sending email in ruby
-export RUBYOPT="-r openssl"
+#export RUBYOPT="-r openssl"
 
 
 
