@@ -121,9 +121,9 @@ if [ $IS_INTERACTIVE = 'true' ] ; then # Interactive shell only
 
       if test $previous_return_value -eq 0
       then
-          PS1="${prompt}> "
+          PS1="${prompt}λ "
       else
-          PS1="${prompt}\[${COLOR_RED}\]> \[${COLOR_NC}\]"
+          PS1="${prompt}\[${COLOR_RED}\]λ \[${COLOR_NC}\]"
       fi
   }
   PROMPT_COMMAND=prompt_func
