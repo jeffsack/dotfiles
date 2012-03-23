@@ -59,6 +59,13 @@ hf(){
   grep "$@" ~/.bash_history
 }
 
+#When running two bash windows, allow both to write to the history, not one stomping the other
+shopt -s histappend
+
+#Keep multiline commands as one command in history
+shopt -s cmdhist
+
+
 
 
 if [ $IS_INTERACTIVE = 'true' ] ; then # Interactive shell only
